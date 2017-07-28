@@ -1,0 +1,29 @@
+﻿@using DAL;
+@model  List<User>
+@{
+    ViewBag.Title = "Index";
+   // List<VisitHistory> history = ViewBag.VisitHistory;
+
+}
+
+<h2>Index</h2>
+
+<table>
+    <th>
+        <td>Name</td>
+    </th>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+        </tr>
+    }
+
+</table>
+
+@using (Html.BeginForm("Adduser", "Users"))
+{
+    <input name="Name" type="text"/>
+    <input type="submit" value="отправить"/>
+}
+
